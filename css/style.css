@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -6,6 +12,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  font-size: 18px;
 }
 
 /* HAMBURGER */
@@ -86,6 +93,7 @@ nav a:hover {
   display: inline-block;
   margin-top: 10px;
   transition: .5s;
+  margin-bottom: 10px;
 }
 
 .btn:hover {
@@ -146,8 +154,8 @@ nav a:hover {
 }
 
 .category-row img {
-  width: 150px;
-  height: 150px;
+  width: 200;
+  height: 300px;
   object-fit: cover;
   border-radius: 10px;
   transition: transform 0.4s ease;
@@ -215,6 +223,11 @@ nav a:hover {
 
 .location {
   text-align: center;
+  padding: 20px;
+}
+
+.loc {
+  margin-bottom: 10px;
 }
 
 /* TESTIMONIALS */
@@ -234,6 +247,7 @@ nav a:hover {
 
 .testimonial-card {
   background: white;
+  height: 100pxpx;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -283,6 +297,10 @@ nav a:hover {
   margin-top: 20px;
 }
 
+.fa-shopping-cart {
+  padding: 10px;
+}
+
 .contact-left, .contact-right {
   max-width: 300px;
   margin: 10px;
@@ -291,7 +309,7 @@ nav a:hover {
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 5px;
+  padding: 15px;
   background: #333;
   color: white;
 }
@@ -347,6 +365,52 @@ footer {
 
 .whatsapp-float:hover {
   transform: scale(1.1);
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(0,0,0,0.9);
+  
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  animation: zoomIn 0.3s ease;
+}
+
+#lightbox-caption {
+  text-align: center;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.lightbox-img {
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
 
@@ -461,8 +525,8 @@ footer {
   }
 
   .category-row img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
   }
 
   .see-more, .back-btn {

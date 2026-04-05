@@ -224,3 +224,39 @@ navLinks.forEach(link => {
     toggle.textContent = "☰";
   });
 });
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const caption = document.getElementById("lightbox-caption");
+const closeBtn = document.querySelector(".close");
+
+// Select all images you want clickable
+const images = document.querySelectorAll(".category-row img");
+
+images.forEach(img => {
+  img.addEventListener("click", () => {
+    lightbox.style.display = "block";
+    lightboxImg.src = img.src;
+    caption.textContent = img.alt; // optional caption
+  });
+});
+
+// Close when X is clicked
+closeBtn.onclick = () => {
+  lightbox.style.display = "none";
+};
+
+// Close when clicking outside image
+lightbox.onclick = (e) => {
+  if (e.target !== lightboxImg) {
+    lightbox.style.display = "none";
+  }
+};
+
+document.addEventListener("click", function(e) {
+  if (e.target.tagName === "IMG" && e.target.closest(".category-row")) {
+    lightbox.style.display = "flex";
+    lightboxImg.src = e.target.src;
+    caption.textContent = e.target.alt || "";
+  }
+});
